@@ -19,11 +19,12 @@ public class CartPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void getCartDetails() throws InterruptedException {
+    public String getCartDetails() throws InterruptedException {
         Thread.sleep(2000);
         String total=cartDetails.getText();
-        System.out.println(total);
-        Assert.assertEquals(total,"$15.99","CartTotal is Matching");
+        return total;
+
+
 
     }
     public void clickCheckOut() throws InterruptedException {

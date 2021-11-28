@@ -15,10 +15,10 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void verifyMessage(){
+
+    public String verifyMessage(){
        String loggedInMessage=sucessMessage.getText();
-        Assert.assertEquals(loggedInMessage,"Logged in successfully");
-        System.out.println(loggedInMessage);
+        return loggedInMessage;
     }
 }
 

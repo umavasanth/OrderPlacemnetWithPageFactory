@@ -8,6 +8,8 @@ import org.testng.Assert;
 
 public class OrderPage {
 
+
+
     @FindBy(css = "div.alert.alert-notice")
     private WebElement orderSuccessMessage;
 
@@ -17,16 +19,18 @@ public class OrderPage {
     public OrderPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    public void verifyOrderSuccessMessage(){
+
+    public String verifyOrderSuccessMessage(){
 
          String orderalertnotice=orderSuccessMessage.getText();
-        Assert.assertEquals(orderalertnotice,"Your order has been processed successfully");
+         return orderalertnotice;
+
 
     }
-    public void verifyOrderId(){
+    public String verifyOrderId(){
         String orderno=orderId.getText();
-        System.out.println(orderno);
-        Assert.assertNotNull(orderno,"Order Id successfully created");
+       return orderno;
+
 
     }
 }

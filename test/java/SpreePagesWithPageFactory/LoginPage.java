@@ -1,11 +1,15 @@
 package SpreePagesWithPageFactory;
 
-import org.VapasiPro.BaseTest;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.io.File;
+import java.io.IOException;
 
 public class LoginPage{
 
@@ -27,7 +31,15 @@ public class LoginPage{
         userEmail.sendKeys(email);
         txtPassword.sendKeys(password);
         loginButton.click();
-    }
+    }/*
+    public void takeScreenShot(WebDriver driver){
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileHandler.copy(screenshot, new File("src/test/ScreenShot/homePageScreenshot.png"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }*/
 
 }
 
